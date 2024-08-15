@@ -1,0 +1,28 @@
+# Introdução
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming.
+
+```{python}
+import os
+os.cpu_count()
+```
+
+```{python}
+import pandas as pd
+
+dict_ = {
+    'nota': [9,  7, 5],
+    'hrs': [4, 4, 2]
+}
+
+pd.DataFrame(dict_)
+```
+
+
+Latex
+
+$$
+\chi' = \sum_{i=1}^n k_i s_i^2
+$$
