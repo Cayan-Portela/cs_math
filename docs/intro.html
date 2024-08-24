@@ -174,6 +174,11 @@ window.Quarto = {
   <li><a href="#método-axiomático" id="toc-método-axiomático" class="nav-link" data-scroll-target="#método-axiomático"><span class="header-section-number">1.3</span> Método Axiomático</a>
   <ul class="collapse">
   <li><a href="#deduções-lógicas" id="toc-deduções-lógicas" class="nav-link" data-scroll-target="#deduções-lógicas"><span class="header-section-number">1.3.1</span> Deduções Lógicas</a></li>
+  <li><a href="#padrões-de-prova" id="toc-padrões-de-prova" class="nav-link" data-scroll-target="#padrões-de-prova"><span class="header-section-number">1.3.2</span> Padrões de Prova</a></li>
+  </ul></li>
+  <li><a href="#provando-uma-implicação" id="toc-provando-uma-implicação" class="nav-link" data-scroll-target="#provando-uma-implicação"><span class="header-section-number">1.4</span> Provando uma Implicação</a>
+  <ul class="collapse">
+  <li><a href="#método-1" id="toc-método-1" class="nav-link" data-scroll-target="#método-1"><span class="header-section-number">1.4.1</span> Método #1</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -200,9 +205,12 @@ window.Quarto = {
 </header>
 
 
+<div style="text-align: justify">
 <p>Material inteiramente baseado em Albert R Meyer et al.&nbsp;Mathematics for computer science. Chapter, 13:253–272, 2002. Disponível em https://courses.csail.mit.edu/6.042/spring18/mcs.pdf</p>
+</div>
 <section id="proposições" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="proposições"><span class="header-section-number">1.1</span> Proposições</h2>
+<div style="text-align: justify">
 <div id="def-line" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1.1 (Proposição)</strong></span> Uma proposição é uma afirmação (comunicação) que ou é verdadeira ou falsa.</p>
 <p>Por exemplo, as duas afirmações a seguir são proposições. A primeira é verdadeira enquanto a segunda é falsa.</p>
@@ -235,18 +243,22 @@ p(1) = 43, p(2) = 47, p(3) = 53, \cdots , p(20) = 461
 <p><span class="theorem-title"><strong>Example 1.2 (Proposição)</strong></span> <span class="math inline">\(\quad \forall \quad n \in \mathbb{N}, \quad p(n)\)</span> é primo</p>
 </div>
 <p>Em que o símbolo <span class="math inline">\(\forall\)</span> significa , o símbolo <span class="math inline">\(\mathbb{N}\)</span> representa o conjunto de inteiros não-negativos e <span class="math inline">\(\in\)</span> significa “pertence”.</p>
+</div>
 </section>
 <section id="predicados" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="predicados"><span class="header-section-number">1.2</span> Predicados</h2>
+<div style="text-align: justify">
 <p>Um predicado pode ser entendido como uma proposição cuja verdade depende do valor de uma ou mais variáveis. Portanto, “n é um quadrado perfeito” descreve um predicado, uma vez que você não pode dizer se é verdadeiro ou falso até saber qual é o valor da variável n.&nbsp;Uma vez que você sabe, por exemplo, que n é igual a 4, o predicado se torna a proposição verdadeira “4 é um quadrado perfeito”.</p>
 <p>Lembre-se, nada diz que a proposição precisa ser verdadeira: se o valor de n fosse 5, você teria a proposição falsa “5 é um quadrado perfeito.” Assim como outras proposições, os predicados geralmente são nomeados com uma letra. Além disso, uma notação semelhante à de uma função é usada para denotar um predicado fornecido com valores variáveis específicos. Por exemplo, podemos usar o nome “P” para o predicado abaixo.</p>
 <p><span class="math display">\[
 P(n) ::= \textrm{``} n \textrm{ é um quadrado perfeito",}
 \]</span></p>
 <p>e repita as observações acima afirmando que P(4) é verdadeiro, e P(5) é falso. Essa notação para predicados é confusamente similar à notação de funções ordinárias. Se P é um predicado, então P(n) é verdadeiro ou falso, dependendo do valor de n. Por outro lado, se p é uma função ordinária, como <span class="math inline">\(n^2 +1\)</span>, então p(n) é uma quantidade numérica. Não confunda esses dois!</p>
+</div>
 </section>
 <section id="método-axiomático" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="método-axiomático"><span class="header-section-number">1.3</span> Método Axiomático</h2>
+<div style="text-align: justify">
 <p>O procedimento padrão para estabelecer a verdade na matemática foi inventado por Euclides, um matemático que trabalhava em Alexandria, Egito, por volta de 300 a.C. Sua ideia era começar com cinco suposições sobre geometria, que pareciam inegáveis com base na experiência direta. (Por exemplo, “Existe um segmento de linha reta entre cada par de pontos”.) Proposições como essas, que são simplesmente aceitas como verdadeiras, são chamadas de axiomas.</p>
 <p>A partir desses axiomas, Euclides estabeleceu a verdade de muitas outras proposições fornecendo “provas”. Uma prova é uma sequência de deduções lógicas a partir de axiomas e declarações previamente provadas que conclui com a proposição em questão.</p>
 <p>Existem vários termos comuns para uma proposição que foi provada. Os diferentes termos sugerem o papel da proposição dentro de um corpo de trabalho maior.</p>
@@ -257,8 +269,10 @@ P(n) ::= \textrm{``} n \textrm{ é um quadrado perfeito",}
 </ul>
 <p>Essas definições não são precisas. Na verdade, às vezes um bom lema acaba se tornando muito mais importante do que o teorema que ele originalmente pretendia provar.</p>
 <p>A abordagem de axiomas e provas de Euclides, agora chamada de método axiomático, continua sendo a base da matemática até hoje. De fato, apenas um pequeno conjunto de axiomas, chamados axiomas de Zermelo-Fraenkel com a escolha (ZFC), junto com algumas regras de dedução lógica, parecem ser suficientes para derivar essencialmente toda a matemática.</p>
+</div>
 <section id="deduções-lógicas" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="deduções-lógicas"><span class="header-section-number">1.3.1</span> Deduções Lógicas</h3>
+<div style="text-align: justify">
 <p>Deduções lógicas, ou <strong>regras de inferência</strong>, são usadas para provar novas proposições utilizando aquelas já previamente provadas.</p>
 <p>Uma regra de inferência fundamental é o <strong>modus ponens</strong>. Essa regra diz que uma prova de (P) junto com uma prova de que (P Q) é uma prova de (Q).</p>
 <p>As regras de inferência são, às vezes, escritas em uma notação peculiar. Por exemplo, o <strong>modus ponens</strong> é escrito assim:</p>
@@ -267,7 +281,7 @@ P(n) ::= \textrm{``} n \textrm{ é um quadrado perfeito",}
 \frac{P, \, P \text{ \small{IMPLICA} } Q}{Q}
 \]</span></p>
 <p>Quando as declarações acima da linha, chamadas de <strong>antecedentes</strong>, são provadas, podemos considerar que a declaração abaixo da linha, chamada de <strong>conclusão</strong> ou <strong>consequente</strong>, também está provada.</p>
-<p>Um requisito fundamental de uma regra de inferência é que ela deve ser <strong>sólida</strong>: uma atribuição de valores de verdade às letras (P), (Q), … que torna todos os antecedentes verdadeiros deve também tornar o consequente verdadeiro. Assim, se começarmos com axiomas verdadeiros e aplicarmos regras de inferência sólidas, tudo o que provamos também será verdadeiro.</p>
+<p>Um requisito fundamental de uma regra de inferência é que ela deve ser <strong>sólida</strong>: uma atribuição de valores de verdade às letras <span class="math inline">\((P), (Q), . . .\)</span> que torna todos os antecedentes verdadeiros deve também tornar o consequente verdadeiro. Assim, se começarmos com axiomas verdadeiros e aplicarmos regras de inferência sólidas, tudo o que provamos também será verdadeiro.</p>
 <p>Existem muitas outras regras de inferência naturais e sólidas, por exemplo:</p>
 <p><strong>Regra.</strong></p>
 <p><span class="math display">\[
@@ -282,6 +296,72 @@ P(n) ::= \textrm{``} n \textrm{ é um quadrado perfeito",}
 <p><span class="math display">\[
 \frac{\text{\small{NÃO}} (P) \text{ \small{IMPLICA} } \text{\small{NÃO}} (Q)}{P \text{ \small{IMPLICA} } Q}
 \]</span></p>
+<p>não é sólida: se <span class="math inline">\((P)\)</span> for atribuído como verdadeiro (T) e <span class="math inline">\((Q)\)</span> como falso (F), então o antecedente é verdadeiro e o consequente não é.</p>
+<p>Assim como com axiomas, não seremos muito formais sobre o conjunto de regras de inferência legais. Cada passo em uma prova deve ser claro e “lógico”; em particular, você deve indicar quais fatos previamente provados são usados para derivar cada nova conclusão.</p>
+</div>
+</section>
+<section id="padrões-de-prova" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="padrões-de-prova"><span class="header-section-number">1.3.2</span> Padrões de Prova</h3>
+<div style="text-align: justify">
+<p>Em princípio, uma prova pode ser qualquer sequência de deduções lógicas a partir de axiomas e declarações previamente provadas que conclui com a proposição em questão. Essa liberdade na construção de uma prova pode parecer avassaladora no início. Como você começa uma prova?</p>
+<p>Aqui está a boa notícia: muitas provas seguem um, de um alguns templates padrão. Cada prova tem seus próprios detalhes, é claro, mas esses templates pelo menos fornecem um esboço para você preencher. Vamos passar por vários desses padrões, apontando a ideia básica, os erros comuns e dando alguns exemplos. Muitos desses templates se encaixam; um pode lhe dar um esboço de alto nível, enquanto outros ajudam em um nível maior de detalhe.</p>
+<p>As receitas abaixo são muito específicas às vezes, dizendo exatamente quais palavras escrever em seu papel. Você certamente é livre para expressar as coisas do seu jeito; estamos apenas lhe dando algo que você poderia dizer para que nunca fique completamente perdido.</p>
+</div>
+</section>
+</section>
+<section id="provando-uma-implicação" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="provando-uma-implicação"><span class="header-section-number">1.4</span> Provando uma Implicação</h2>
+<div style="text-align: justify">
+<p>Proposições da forma “Se <span class="math inline">\((P)\)</span>, então <span class="math inline">\((Q)\)</span>” são chamadas de <strong>implicações</strong>. Essa implicação é frequentemente reformulada como “<span class="math inline">\((P \text{ \small{IMPLICA} } Q)\)</span>.”</p>
+<p>Aqui estão alguns exemplos:</p>
+<ul>
+<li>(Fórmula Quadrática) Se <span class="math inline">\(ax^2 + bx + c = 0\)</span> e <span class="math inline">\(a \neq 0\)</span>, então</li>
+</ul>
+<p><span class="math display">\[
+x = \left(-b \pm \sqrt{b^2 - 4ac}\right) / 2a.
+\]</span></p>
+<ul>
+<li><p>(Conjectura de Goldbach reformulada) Se <span class="math inline">\((n)\)</span> é um número inteiro par maior que 2, então <span class="math inline">\((n)\)</span> é a soma de dois números primos.</p></li>
+<li><p>Se <span class="math inline">\((0 \leq x \leq 2)\)</span>, então <span class="math inline">\((-x^3 + 4x + 1 &gt; 0)\)</span>.</p></li>
+</ul>
+<p>Existem alguns métodos padrão para provar uma implicação.</p>
+</div>
+<section id="método-1" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="método-1"><span class="header-section-number">1.4.1</span> Método #1</h3>
+<div style="text-align: justify">
+<p>Para provar que <span class="math inline">\((P \text{ \small{IMPLICA} } Q)\)</span>:</p>
+<ol type="1">
+<li>Escreva: “Assuma <span class="math inline">\((P)\)</span>.”</li>
+<li>Mostre que <span class="math inline">\((Q)\)</span> segue logicamente.</li>
+</ol>
+<p><strong>Exemplo</strong></p>
+<div id="thm-1" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1.1</strong></span> Se <span class="math inline">\(\quad (0 \leq x \leq 2),\quad\)</span> então <span class="math inline">\(\quad (-x^3 + 4x + 1 &gt; 0)\)</span></p>
+</div>
+<p>Antes de escrevermos uma prova deste teorema, temos que fazer alguns rascunhos para entender por que ele é verdadeiro.</p>
+<p>A desigualdade certamente é válida para <span class="math inline">\((x = 0)\)</span> então o lado esquerdo é igual a 1, e 1 &gt; 0. À medida que <span class="math inline">\((x)\)</span> cresce, o termo <span class="math inline">\((4x)\)</span> (que é positivo) inicialmente parece ter maior magnitude do que <span class="math inline">\((x^3)\)</span> (que é negativo). Por exemplo, quando <span class="math inline">\((x = 1)\)</span> temos <span class="math inline">\((4x = 4)\)</span> mas <span class="math inline">\((x^3 = -1)\)</span> Na verdade, parece que <span class="math inline">\((x^3)\)</span> não começa a dominar até <span class="math inline">\((x &gt; 2)\)</span> Portanto, parece que a parte <span class="math inline">\((x^3 + 4x)\)</span> deve ser não negativa para todo <span class="math inline">\((x)\)</span> entre 0 e 2, o que implicaria que <span class="math inline">\((x^3 + 4x + 1)\)</span> é positivo.</p>
+<p>Até agora, tudo bem. Mas ainda precisamos substituir todas essas expressões como “parece que” por argumentos sólidos e lógicos. Podemos obter uma melhor compreensão da parte crítica <span class="math inline">\((x^3 + 4x)\)</span> ao fatorá-la, o que não é muito difícil:</p>
+<p><span class="math display">\[
+-x^3 + 4x = x(2 - x)(2 + x)
+\]</span></p>
+<p>Aha! Para <span class="math inline">\((x)\)</span> entre 0 e 2, todos os termos no lado direito são não negativos. E o produto de termos não negativos também é não negativo. Vamos organizar essa avalanche de observações em uma prova limpa.</p>
+<p><strong>Prova.</strong> Assuma <span class="math inline">\((0 \leq x \leq 2)\)</span>. Então <span class="math inline">\((x)\)</span>, <span class="math inline">\((2 - x)\)</span> e <span class="math inline">\((2 + x)\)</span> são todos não negativos. Portanto, o produto desses termos também é não negativo. Adicionando 1 a esse produto obtemos um número positivo, assim:</p>
+</div>
+<p><span class="math display">\[
+x(2 - x)(2 + x) + 1 &gt; 0
+\]</span></p>
+<p>Multiplicando no lado esquerdo prova que</p>
+<p><span class="math display">\[
+-x^3 + 4x + 1 &gt; 0
+\]</span></p>
+<p>como afirmado. <span class="math inline">\(\hspace{330pt} \blacksquare\)</span></p>
+<div style="text-align: justify">
+<p>Existem alguns pontos aqui que se aplicam a todas as provas:</p>
+<ul>
+<li><p>Você frequentemente precisará fazer alguns rascunhos enquanto tenta descobrir os passos lógicos de uma prova. Seus rascunhos podem ser tão desorganizados quanto você quiser — cheios de becos sem saída, diagramas estranhos, palavras obscenas, seja o que for. Mas mantenha seus rascunhos separados da sua prova final, que deve ser clara e concisa.</p></li>
+<li><p>As provas normalmente começam com a palavra “Prova” e terminam com algum tipo de delimitador como <span class="math inline">\(\blacksquare\)</span> ou “QED.” O único propósito dessas convenções é esclarecer onde as provas começam e terminam.</p></li>
+</ul>
+</div>
 
 
 </section>
