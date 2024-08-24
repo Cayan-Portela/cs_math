@@ -1,5 +1,5 @@
 # Início {.unnumbered}
 
-Material de apoio para disciplina ministrada no Ceub durante o semestre letivo 2024/1.
+Material de apoio para disciplina Matemática para Ciência da Computação, ministrada no Ceub durante o semestre letivo 2024/2.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Este material inteiramente baseado em Albert R Meyer et al. (Mathematics for computer science. Chapter, 13:253–272, 2002. Disponível em https://courses.csail.mit.edu/6.042/spring18/mcs.pdf)

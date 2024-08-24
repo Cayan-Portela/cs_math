@@ -42,7 +42,7 @@ $$
 Um número primo é um inteiro maior que 1 que não é divisível por nenhum outro número inteiro maior que 1, a não ser ele mesmo. Por exemplo, 2, 3, 5, 7, 11 são os primeiros cinco números primos. Vamos tentar uma experimentação numérica para verifcar essa proposição. Considere:
 
 $$
-p(n) ::= n^2 + n + 31
+p(n) ::= n^2 + n + 41
 $$
 
 Começamos com $p(0) = 41$, que é primo. Então,
@@ -59,7 +59,7 @@ Tais proposições a respeito de *todos* ou *qualquer* número ou itens de algum
 
 ## Proposição
 
-$\forall n \in \mathbb{N}, \quad p(n)$ é primo
+$\quad \forall \quad n \in \mathbb{N}, \quad p(n)$ é primo
 :::
 
 Em que o símbolo $\forall$ significa \textit{para todo}, o símbolo $\mathbb{N}$ representa o conjunto de inteiros não-negativos e $\in$ significa "pertence".
@@ -72,7 +72,7 @@ Um predicado pode ser entendido como uma proposição cuja verdade depende do va
 Lembre-se, nada diz que a proposição precisa ser verdadeira: se o valor de n fosse 5, você teria a proposição falsa “5 é um quadrado perfeito.” Assim como outras proposições, os predicados geralmente são nomeados com uma letra. Além disso, uma notação semelhante à de uma função é usada para denotar um predicado fornecido com valores variáveis específicos. Por exemplo, podemos usar o nome “P” para o predicado abaixo.
 
 $$
-P(n) ::= \textrm{"} n \textrm{ é um quadrado perfeito",}
+P(n) ::= \textrm{``} n \textrm{ é um quadrado perfeito",}
 $$
 
 e repita as observações acima afirmando que P(4) é verdadeiro, e P(5) é falso.
@@ -81,3 +81,57 @@ Se P é um predicado, então P(n) é verdadeiro ou falso, dependendo do valor de
 Por outro lado, se p é uma função ordinária, como $n^2 +1$, então p(n) é uma quantidade numérica. Não confunda esses dois!
 
 ## Método Axiomático
+
+O procedimento padrão para estabelecer a verdade na matemática foi inventado por Euclides, um matemático que trabalhava em Alexandria, Egito, por volta de 300 a.C. Sua ideia era começar com cinco suposições sobre geometria, que pareciam inegáveis com base na experiência direta. (Por exemplo, "Existe um segmento de linha reta entre cada par de pontos".) Proposições como essas, que são simplesmente aceitas como verdadeiras, são chamadas de axiomas.
+
+A partir desses axiomas, Euclides estabeleceu a verdade de muitas outras proposições fornecendo "provas". Uma prova é uma sequência de deduções lógicas a partir de axiomas e declarações previamente provadas que conclui com a proposição em questão.
+
+Existem vários termos comuns para uma proposição que foi provada. Os diferentes termos sugerem o papel da proposição dentro de um corpo de trabalho maior.
+
+- Proposições verdadeiras importantes são chamadas de _teoremas_.
+- Um _lema_ é uma proposição preliminar útil para provar proposições posteriores.
+- Um _corolário_ é uma proposição que segue em apenas alguns passos lógicos de um teorema.
+
+Essas definições não são precisas. Na verdade, às vezes um bom lema acaba se tornando muito mais importante do que o teorema que ele originalmente pretendia provar.
+
+A abordagem de axiomas e provas de Euclides, agora chamada de método axiomático, continua sendo a base da matemática até hoje. De fato, apenas um pequeno conjunto de axiomas, chamados axiomas de Zermelo-Fraenkel com a escolha (ZFC), junto com algumas regras de dedução lógica, parecem ser suficientes para derivar essencialmente toda a matemática.
+
+### Deduções Lógicas
+
+Deduções lógicas, ou **regras de inferência**, são usadas para provar novas proposições utilizando aquelas já previamente provadas.
+
+Uma regra de inferência fundamental é o **modus ponens**. Essa regra diz que uma prova de \(P\) junto com uma prova de que \(P \text{ IMPLICA } Q\) é uma prova de \(Q\).
+
+As regras de inferência são, às vezes, escritas em uma notação peculiar. Por exemplo, o **modus ponens** é escrito assim:
+
+**Regra.**
+
+$$
+\frac{P, \, P \text{ \small{IMPLICA} } Q}{Q}
+$$
+
+Quando as declarações acima da linha, chamadas de __antecedentes__, são provadas, podemos considerar que a declaração abaixo da linha, chamada de __conclusão__ ou __consequente__, também está provada.
+
+Um requisito fundamental de uma regra de inferência é que ela deve ser **sólida**: uma atribuição de valores de verdade às letras \(P\), \(Q\), ... que torna todos os antecedentes verdadeiros deve também tornar o consequente verdadeiro. Assim, se começarmos com axiomas verdadeiros e aplicarmos regras de inferência sólidas, tudo o que provamos também será verdadeiro.
+
+Existem muitas outras regras de inferência naturais e sólidas, por exemplo:
+
+**Regra.**
+
+$$
+\frac{P \text{ \small{IMPLICA} } Q, \, Q \text{ \small{IMPLICA} } R}{P \text{ \small{IMPLICA} } R}
+$$
+
+**Regra.**
+
+$$
+\frac{\text{\small{NÃO}} (P) \text{ \small{IMPLICA} } \text{\small{NÃO}} (Q)}{Q \text{ \small{IMPLICA} } P}
+$$
+
+Por outro lado,
+
+**Não-Regra.**
+
+$$
+\frac{\text{\small{NÃO}} (P) \text{ \small{IMPLICA} } \text{\small{NÃO}} (Q)}{P \text{ \small{IMPLICA} } Q}
+$$

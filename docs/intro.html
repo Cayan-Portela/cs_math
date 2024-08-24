@@ -171,7 +171,10 @@ window.Quarto = {
   <ul>
   <li><a href="#proposições" id="toc-proposições" class="nav-link active" data-scroll-target="#proposições"><span class="header-section-number">1.1</span> Proposições</a></li>
   <li><a href="#predicados" id="toc-predicados" class="nav-link" data-scroll-target="#predicados"><span class="header-section-number">1.2</span> Predicados</a></li>
-  <li><a href="#método-axiomático" id="toc-método-axiomático" class="nav-link" data-scroll-target="#método-axiomático"><span class="header-section-number">1.3</span> Método Axiomático</a></li>
+  <li><a href="#método-axiomático" id="toc-método-axiomático" class="nav-link" data-scroll-target="#método-axiomático"><span class="header-section-number">1.3</span> Método Axiomático</a>
+  <ul class="collapse">
+  <li><a href="#deduções-lógicas" id="toc-deduções-lógicas" class="nav-link" data-scroll-target="#deduções-lógicas"><span class="header-section-number">1.3.1</span> Deduções Lógicas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -220,7 +223,7 @@ P(n) = primo
 </div>
 <p>Um número primo é um inteiro maior que 1 que não é divisível por nenhum outro número inteiro maior que 1, a não ser ele mesmo. Por exemplo, 2, 3, 5, 7, 11 são os primeiros cinco números primos. Vamos tentar uma experimentação numérica para verifcar essa proposição. Considere:</p>
 <p><span class="math display">\[
-p(n) ::= n^2 + n + 31
+p(n) ::= n^2 + n + 41
 \]</span></p>
 <p>Começamos com <span class="math inline">\(p(0) = 41\)</span>, que é primo. Então,</p>
 <p><span class="math display">\[
@@ -229,7 +232,7 @@ p(1) = 43, p(2) = 47, p(3) = 53, \cdots , p(20) = 461
 <p>são todos primos. Podemos seguir validando a proposição até <span class="math inline">\(n = 39\)</span> e confirmar que <span class="math inline">\(p(39) = 1601\)</span> é primo. Porém, <span class="math inline">\(p(40) = 41 \times 41\)</span>, que não é primo. Portanto a proposição é falsa, uma vez que não é verdadeiro que <span class="math inline">\(p(n)\)</span> seja primo para <em>todos</em> os inteiros não-negativos <span class="math inline">\(n\)</span>. Esse exemplo evidencia um ponto importante que, em geral, não é possível validar uma afirmação sobre um conjunto infinito checando uma amostra finita de seus elementos, não importa o quão grande sera a amostra.</p>
 <p>Tais proposições a respeito de <em>todos</em> ou <em>qualquer</em> número ou itens de algum tipo são bastante comuns e possuem uma notação especial. Com essa notação, a proposição acima seria:</p>
 <div id="exm-line2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1.2 (Proposição)</strong></span> <span class="math inline">\(\forall n \in \mathbb{N}, \quad p(n)\)</span> é primo</p>
+<p><span class="theorem-title"><strong>Example 1.2 (Proposição)</strong></span> <span class="math inline">\(\quad \forall \quad n \in \mathbb{N}, \quad p(n)\)</span> é primo</p>
 </div>
 <p>Em que o símbolo <span class="math inline">\(\forall\)</span> significa , o símbolo <span class="math inline">\(\mathbb{N}\)</span> representa o conjunto de inteiros não-negativos e <span class="math inline">\(\in\)</span> significa “pertence”.</p>
 </section>
@@ -238,14 +241,50 @@ p(1) = 43, p(2) = 47, p(3) = 53, \cdots , p(20) = 461
 <p>Um predicado pode ser entendido como uma proposição cuja verdade depende do valor de uma ou mais variáveis. Portanto, “n é um quadrado perfeito” descreve um predicado, uma vez que você não pode dizer se é verdadeiro ou falso até saber qual é o valor da variável n.&nbsp;Uma vez que você sabe, por exemplo, que n é igual a 4, o predicado se torna a proposição verdadeira “4 é um quadrado perfeito”.</p>
 <p>Lembre-se, nada diz que a proposição precisa ser verdadeira: se o valor de n fosse 5, você teria a proposição falsa “5 é um quadrado perfeito.” Assim como outras proposições, os predicados geralmente são nomeados com uma letra. Além disso, uma notação semelhante à de uma função é usada para denotar um predicado fornecido com valores variáveis específicos. Por exemplo, podemos usar o nome “P” para o predicado abaixo.</p>
 <p><span class="math display">\[
-P(n) ::= \textrm{"} n \textrm{ é um quadrado perfeito",}
+P(n) ::= \textrm{``} n \textrm{ é um quadrado perfeito",}
 \]</span></p>
 <p>e repita as observações acima afirmando que P(4) é verdadeiro, e P(5) é falso. Essa notação para predicados é confusamente similar à notação de funções ordinárias. Se P é um predicado, então P(n) é verdadeiro ou falso, dependendo do valor de n. Por outro lado, se p é uma função ordinária, como <span class="math inline">\(n^2 +1\)</span>, então p(n) é uma quantidade numérica. Não confunda esses dois!</p>
 </section>
 <section id="método-axiomático" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="método-axiomático"><span class="header-section-number">1.3</span> Método Axiomático</h2>
+<p>O procedimento padrão para estabelecer a verdade na matemática foi inventado por Euclides, um matemático que trabalhava em Alexandria, Egito, por volta de 300 a.C. Sua ideia era começar com cinco suposições sobre geometria, que pareciam inegáveis com base na experiência direta. (Por exemplo, “Existe um segmento de linha reta entre cada par de pontos”.) Proposições como essas, que são simplesmente aceitas como verdadeiras, são chamadas de axiomas.</p>
+<p>A partir desses axiomas, Euclides estabeleceu a verdade de muitas outras proposições fornecendo “provas”. Uma prova é uma sequência de deduções lógicas a partir de axiomas e declarações previamente provadas que conclui com a proposição em questão.</p>
+<p>Existem vários termos comuns para uma proposição que foi provada. Os diferentes termos sugerem o papel da proposição dentro de um corpo de trabalho maior.</p>
+<ul>
+<li>Proposições verdadeiras importantes são chamadas de <em>teoremas</em>.</li>
+<li>Um <em>lema</em> é uma proposição preliminar útil para provar proposições posteriores.</li>
+<li>Um <em>corolário</em> é uma proposição que segue em apenas alguns passos lógicos de um teorema.</li>
+</ul>
+<p>Essas definições não são precisas. Na verdade, às vezes um bom lema acaba se tornando muito mais importante do que o teorema que ele originalmente pretendia provar.</p>
+<p>A abordagem de axiomas e provas de Euclides, agora chamada de método axiomático, continua sendo a base da matemática até hoje. De fato, apenas um pequeno conjunto de axiomas, chamados axiomas de Zermelo-Fraenkel com a escolha (ZFC), junto com algumas regras de dedução lógica, parecem ser suficientes para derivar essencialmente toda a matemática.</p>
+<section id="deduções-lógicas" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="deduções-lógicas"><span class="header-section-number">1.3.1</span> Deduções Lógicas</h3>
+<p>Deduções lógicas, ou <strong>regras de inferência</strong>, são usadas para provar novas proposições utilizando aquelas já previamente provadas.</p>
+<p>Uma regra de inferência fundamental é o <strong>modus ponens</strong>. Essa regra diz que uma prova de (P) junto com uma prova de que (P Q) é uma prova de (Q).</p>
+<p>As regras de inferência são, às vezes, escritas em uma notação peculiar. Por exemplo, o <strong>modus ponens</strong> é escrito assim:</p>
+<p><strong>Regra.</strong></p>
+<p><span class="math display">\[
+\frac{P, \, P \text{ \small{IMPLICA} } Q}{Q}
+\]</span></p>
+<p>Quando as declarações acima da linha, chamadas de <strong>antecedentes</strong>, são provadas, podemos considerar que a declaração abaixo da linha, chamada de <strong>conclusão</strong> ou <strong>consequente</strong>, também está provada.</p>
+<p>Um requisito fundamental de uma regra de inferência é que ela deve ser <strong>sólida</strong>: uma atribuição de valores de verdade às letras (P), (Q), … que torna todos os antecedentes verdadeiros deve também tornar o consequente verdadeiro. Assim, se começarmos com axiomas verdadeiros e aplicarmos regras de inferência sólidas, tudo o que provamos também será verdadeiro.</p>
+<p>Existem muitas outras regras de inferência naturais e sólidas, por exemplo:</p>
+<p><strong>Regra.</strong></p>
+<p><span class="math display">\[
+\frac{P \text{ \small{IMPLICA} } Q, \, Q \text{ \small{IMPLICA} } R}{P \text{ \small{IMPLICA} } R}
+\]</span></p>
+<p><strong>Regra.</strong></p>
+<p><span class="math display">\[
+\frac{\text{\small{NÃO}} (P) \text{ \small{IMPLICA} } \text{\small{NÃO}} (Q)}{Q \text{ \small{IMPLICA} } P}
+\]</span></p>
+<p>Por outro lado,</p>
+<p><strong>Não-Regra.</strong></p>
+<p><span class="math display">\[
+\frac{\text{\small{NÃO}} (P) \text{ \small{IMPLICA} } \text{\small{NÃO}} (Q)}{P \text{ \small{IMPLICA} } Q}
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
