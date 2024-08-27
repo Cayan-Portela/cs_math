@@ -230,3 +230,31 @@ Existem alguns pontos aqui que se aplicam a todas as provas:
 
 - As provas normalmente começam com a palavra "Prova" e terminam com algum tipo de delimitador como $\blacksquare$ ou "QED." O único propósito dessas convenções é esclarecer onde as provas começam e terminam.
 </div>
+
+### Método #1
+
+Uma implicação “$(P \text{ IMPLICA } Q)$”) é logicamente equivalente à sua contrapositiva $(\text{NÃO}(Q) \text{ IMPLICA } \text{NÃO}(P))$:  
+Provar uma é tão bom quanto provar a outra, e às vezes provar a contrapositiva é mais fácil do que provar a declaração original. Se for o caso, você pode proceder da seguinte forma:
+
+1. Escreva: “Vamos provar a contrapositiva:” e, em seguida, declare a contrapositiva.
+2. Prossiga como no Método #1.
+
+**Exemplo**  
+**Teorema** Se $r$ é irracional, então $\sqrt{r}$ é irracional.
+
+Um número é racional quando é igual a uma fração de inteiros — ou seja, se é igual a $m/n$ para alguns inteiros $m$ e $n$. Se não for racional, então é chamado de irracional. Portanto, devemos mostrar que se $r$$ não é uma razão de inteiros, então $\sqrt{r}$ também não é uma razão de inteiros. Isso é bem complicado! Podemos eliminar ambas as negações e simplificar a prova usando a contrapositiva em vez disso.
+
+**Prova.** Vamos provar a contrapositiva: se $\sqrt{r}$ é racional, então $r$ é racional.  
+Assuma que $\sqrt{r}$ é racional. Então, existem inteiros $m$ e $n$ tais que:
+
+$$
+\sqrt{r} = \frac{m}{n}
+$$
+
+Elevando os dois lados ao quadrado, temos:
+
+$$
+r = \frac{m^2}{n^2}
+$$
+
+Como $m^2$ e $n^2$ são inteiros, $r$ é racional.
