@@ -231,9 +231,10 @@ Existem alguns pontos aqui que se aplicam a todas as provas:
 - As provas normalmente começam com a palavra "Prova" e terminam com algum tipo de delimitador como $\blacksquare$ ou "QED." O único propósito dessas convenções é esclarecer onde as provas começam e terminam.
 </div>
 
-### Método #1
+### Método #2
 
-Uma implicação “$(P \text{ IMPLICA } Q)$”) é logicamente equivalente à sua contrapositiva $(\text{NÃO}(Q) \text{ IMPLICA } \text{NÃO}(P))$:  
+<div style="text-align: justify">
+Uma implicação “$P \text{ \small{IMPLICA} } Q$” é logicamente equivalente à sua contrapositiva $\text{\small{NÃO}}(Q) \text{ \small{IMPLICA} } \text{\small{NÃO}}(P)$:  
 Provar uma é tão bom quanto provar a outra, e às vezes provar a contrapositiva é mais fácil do que provar a declaração original. Se for o caso, você pode proceder da seguinte forma:
 
 1. Escreva: “Vamos provar a contrapositiva:” e, em seguida, declare a contrapositiva.
@@ -258,3 +259,266 @@ r = \frac{m^2}{n^2}
 $$
 
 Como $m^2$ e $n^2$ são inteiros, $r$ é racional.
+</div>
+
+## Provando "se somente se ""
+Muitos teoremas matemáticos afirmam que duas declarações são logicamente equivalentes; ou seja, uma é válida se, e somente se, a outra também for. Aqui está um exemplo que é conhecido há milhares de anos:
+Dois triângulos têm os mesmos comprimentos de lados se, e somente se, dois comprimentos de lados e o ângulo entre esses lados forem os mesmos.
+A expressão "se, e somente se" aparece com tanta frequência que muitas vezes é abreviada como "sse".
+
+### Método #1: Prove que Cada Declaração Implica na Outra
+A declaração "P SSE Q" é equivalente a duas declarações: "P IMPLICA Q" e "Q IMPLICA P". Então, você pode provar um "sse" provando duas implicações:
+
+1. Escreva: "Provamos que P implica Q e vice-versa."
+2. Escreva: "Primeiro, mostramos que P implica Q." Faça isso por um dos métodos da Seção 1.5.
+3. Escreva: "Agora, mostramos que Q implica P." Novamente, faça isso por um dos métodos da Seção 1.5.
+
+### Método #2: Construa uma Cadeia de SSE
+Para provar que P é verdadeiro se, e somente se, Q for verdadeiro:
+
+1. Escreva: "Construímos uma cadeia de implicações se, e somente se."
+2. Prove que P é equivalente a uma segunda declaração, que é equivalente a uma terceira, e assim por diante, até que você chegue a Q.
+
+Esse método às vezes requer mais criatividade do que o primeiro, mas o resultado pode ser uma prova curta e elegante.
+
+### Exemplo
+A **desvio padrão** de uma sequência de valores $x_1, x_2, \dots, x_n$ é definida como:
+
+$$
+s = \sqrt{\frac{(x_1 - \mu)^2 + (x_2 - \mu)^2 + \dots + (x_n - \mu)^2}{n}}
+$$
+
+onde $\mu$ é a média dos valores:
+
+$$
+\mu = \frac{x_1 + x_2 + \dots + x_n}{n}
+$$
+
+**Teorema 1.6.1.** O desvio padrão de uma sequência de valores $x_1, x_2, \dots, x_n$ é zero se, e somente se, todos os valores forem iguais à média.
+Por exemplo, o desvio padrão das notas de teste é zero se, e somente se, todos tiverem exatamente a média da turma.
+
+**Prova.** Construímos uma cadeia de implicações "sse", começando com a declaração de que o desvio padrão é zero:
+
+$$
+s = \sqrt{\frac{(x_1 - \mu)^2 + (x_2 - \mu)^2 + \dots + (x_n - \mu)^2}{n}} = 0
+$$
+
+## Modus ponens
+
+Uma vez que provamos uma implicação
+
+$$
+P \implies Q
+$$
+
+como sendo sempre verdadeira, queremos usá-la. Logo provaremos que a implicação
+
+> Se $n$ é par, então $n^2$ é par.
+
+é sempre verdadeira. Sabemos que não pode ser falsa, então vamos escrever as 3 linhas relevantes de sua tabela verdade e suprimir a linha correspondente à implicação ser falsa:
+
+| $P$ | $Q$ | $P \implies Q$ |
+|:----:|:----:|:--------------:|
+|  T   |  T   |       T        |
+|  F   |  T   |       T        |
+|  F   |  F   |       T        |
+
+Note que, se pegarmos um número como $n = 14$, sabemos que ele é par e, portanto, a hipótese é verdadeira. Pela tabela verdade, sabemos que a conclusão também deve ser verdadeira — o número $n^2 = 14^2$ é par. Não precisamos fazer mais nada; a tabela verdade, e nossa prova, garantem que a conclusão é verdadeira.
+
+De modo mais geral, se provamos que
+
+$$
+P \implies Q
+$$
+
+é sempre verdadeiro, então, se sabemos que a hipótese $P$ é verdadeira, a conclusão $Q$ também deve ser verdadeira.
+
+::: {#def-modusponens}
+
+### Modus ponens
+
+A dedução:
+
+- $P$ implica $Q$ é verdadeiro, e
+- $P$ é verdadeiro
+- logo, $Q$ deve ser verdadeiro.
+
+é chamada de **modus ponens**.
+:::
+
+Esta dedução lógica foi formalizada pela primeira vez por Teofrasto.
+
+Note que, se tivermos provado a implicação $P \implies Q$ como verdadeira, mas a hipótese $P$ for falsa, então **não podemos** concluir nada sobre o valor de verdade da conclusão. Quando a hipótese é falsa, o valor de verdade da conclusão não importa — a implicação ainda é verdadeira. Podemos verificar isso considerando as duas linhas relevantes da tabela verdade da implicação.
+
+| $P$ | $Q$ | $P \implies Q$ |
+|:----:|:----:|:--------------:|
+|  F   |  T   |       T        |
+|  F   |  F   |       T        |
+
+De forma similar, se tivermos provado a implicação $P \implies Q$ como verdadeira, e tivermos provado que a conclusão $Q$ é verdadeira, então não podemos concluir nada sobre o valor de verdade da hipótese $P$. Novamente, isso é facilmente verificado considerando as duas linhas relevantes da tabela verdade da implicação.
+
+| $P$ | $Q$ | $P \implies Q$ |
+|:----:|:----:|:--------------:|
+|  T   |  T   |       T        |
+|  F   |  T   |       T        |
+
+No entanto, há uma outra instância na qual podemos fazer uma conclusão válida. Considere novamente a tabela verdade quando a implicação $P \implies Q$ é verdadeira, mas a conclusão $Q$ é falsa:
+
+| $P$ | $Q$ | $P \implies Q$ |
+|:----:|:----:|:--------------:|
+|  F   |  F   |       T        |
+
+Aqui, a única possibilidade é que a hipótese deve ser falsa. Isso nos permite fazer outra dedução válida.
+
+::: {#def-modustollens}
+
+### Modus tollens
+
+A dedução:
+
+- $P$ implica $Q$ é verdadeira, e
+- $Q$ é falso
+- logo, $P$ deve ser falso.
+
+é chamada de **modus tollens**.
+:::
+
+Então, quando sabemos (voltando ao nosso exemplo) que:
+
+> Se ele é Shakespeare, então ele está morto.
+
+podemos concluir que qualquer pessoa viva não é Shakespeare.
+
+#### Afirmar o consequente e negar o antecedente
+
+A má aplicação do **modus ponens** é uma fonte frequente de erros lógicos. Um erro muito comum é chamado de “afirmar o consequente”.
+
+::: {#wrn-errocomum1}
+
+### Um erro lógico comum.
+A falsa dedução:
+
+- $P$ implica $Q$ é verdadeiro, e
+- $Q$ é verdadeiro,
+- e, portanto, $P$ deve ser verdadeiro.
+
+é chamada de **afirmar o consequente**.
+:::
+
+> O fluxo de lógica está errado — verifique a tabela verdade. Além disso, a notação de seta para a implicação, $\implies$, nos ajuda a lembrar que a verdade deve fluir da hipótese para a conclusão, e não o contrário.
+
+Para ver quão errado isso pode ser, considere novamente a verdadeira implicação:
+
+- Se ele é Shakespeare, então ele está morto.
+
+Se afirmássemos o consequente, então qualquer homem morto deve ser Shakespeare.
+
+Afirmar o consequente às vezes é usado como uma técnica retórica (especialmente por quem propaga bobagens):
+
+> Se eles são Galileu, então são oprimidos. Estou sendo oprimido, logo devo ser Galileu.
+
+ou (quando sentindo pena de si mesmo)
+
+> Se eles são grandes artistas, então são incompreendidos. Sou incompreendido, logo devo ser um grande artista.
+
+E a falácia da seção de comentários nas redes sociais:
+
+> Se eu digo a verdade, ofendo as pessoas. Estou ofendendo, logo estou dizendo a verdade.
+Tenha cuidado com a afirmação do consequente — ela aparece com frequência e é sempre falaciosa. Um erro lógico muito semelhante é chamado de "negar o antecedente".
+
+::: {#wrn-errocomum2}
+
+#### Outro erro lógico comum.
+
+A falsa dedução:
+
+- $P$ implica $Q$ é verdadeiro, e
+- $P$ é falso,
+- e, portanto, $Q$ deve ser falso.
+
+:::
+
+é chamada de **negar o antecedente** e é uma má aplicação do **modus tollens**.
+
+Aqui estão alguns exemplos:
+
+> Se eu fui a Toronto, então visitei o Canadá. Eu não fui a Toronto, então não visitei o Canadá.
+
+> Se ele é Shakespeare então ele está morto. Abraham Linconl não é Shakespeare, então ele deve estar vivo.
+
+> Se tem gosto ruim então deve ser saudável. Isso tem gosto bom, então não deve ser saudável.
+
+### Encadeando implicações
+
+Quando construímos uma prova de que $P \implies Q$ é verdadeira, não fazemos isso de uma só vez. Em vez disso, dividimos em uma sequência de implicações menores e mais fáceis, que podemos encadear. Para ver como isso funciona, considere o seguinte:
+
+#### Resultado
+
+Seja $P$, $Q$ e $R$ declarações. Então, a seguinte afirmação é sempre verdadeira:
+
+$$
+\Big( (P \implies R) \land (R \implies Q) \Big) \implies (P \implies Q)
+$$
+
+Este resultado é um exemplo de uma tautologia, uma afirmação que é sempre verdadeira. Voltaremos às tautologias mais tarde no texto. Para mostrar que é sempre verdadeira, poderíamos construir a tabela verdade ou usar algum raciocínio. Ambos os métodos são provas, mas não seremos tão formais até o próximo capítulo. A tabela verdade não é difícil de construir, mas um pouco tediosa; como cada uma de $P$, $Q$, $R$ pode ser verdadeira ou falsa, há $2^3 = 8$ linhas a considerar:
+
+| $P$ | $Q$ | $R$ | $P \implies R$ | $R \implies Q$ | $P \implies Q$ | A afirmação |
+|:----:|:----:|:----:|:--------------:|:--------------:|:--------------:|:------------:|
+|  T   |  T   |  T   |       T        |       T        |       T        |       T      |
+|  T   |  T   |  F   |       F        |       T        |       T        |       T      |
+|  T   |  F   |  T   |       T        |       F        |       F        |       T      |
+|  T   |  F   |  F   |       F        |       T        |       F        |       T      |
+|  F   |  T   |  T   |       T        |       T        |       T        |       T      |
+|  F   |  T   |  F   |       T        |       T        |       T        |       T      |
+|  F   |  F   |  T   |       T        |       F        |       T        |       T      |
+|  F   |  F   |  F   |       T        |       T        |       T        |       T      |
+
+A tabela acima é uma maneira perfeitamente razoável de mostrar que a afirmação é sempre verdadeira. No entanto, podemos fazer o mesmo apenas com um pouco de raciocínio; isso também melhora nossa compreensão da afirmação. Apresentaremos o argumento em forma de pontos:
+
+- A declaração é uma implicação com a hipótese $((P \implies R) \land (R \implies Q))$ e a conclusão $(P \implies Q)$. Uma implicação é falsa quando a hipótese é verdadeira, mas a conclusão é falsa; caso contrário, a implicação é verdadeira.
+
+- Como a conclusão, $(P \implies Q)$, é uma implicação, só pode ser falsa quando sua hipótese é verdadeira e sua conclusão é falsa. Portanto, devemos ter que $P$ é verdadeiro, mas $Q$ é falso.
+
+- Para que a hipótese seja verdadeira, ambas as implicações, $(P \implies R)$ e $(R \implies Q)$, devem ser verdadeiras (já que uma conjunção de duas afirmações só é verdadeira quando ambas são verdadeiras).
+
+  - Como $P$ é verdadeiro e exigimos que $(P \implies R)$ seja verdadeiro, $R$ deve ser verdadeiro.
+  
+  - Como $Q$ é falso e exigimos que $(R \implies Q)$ seja verdadeiro, $R$ deve ser falso.
+
+Mas, como $R$ é uma afirmação, ela não pode ser verdadeira e falsa ao mesmo tempo.
+
+- Portanto, não há como fazer a afirmação ser falsa. Como nunca é falsa, ela deve ser sempre verdadeira.
+
+Então, voltando à declaração $P \implies Q$. Gostaríamos de mostrar que é sempre verdadeira, mas não podemos fazê-lo de uma só vez. Em vez disso, assumimos que podemos dar dois passos menores e provar que as duas implicações $(P \implies R)$ e $(R \implies Q)$ são sempre verdadeiras. A conjunção das duas implicações, $(P \implies R) \land (R \implies Q)$, também é verdadeira e é exatamente a hipótese do **Resultado 2.5.5**. Como a implicação no **Resultado 2.5.5** é sempre verdadeira e sua hipótese é verdadeira — **modus ponens** — sua conclusão deve ser verdadeira.
+
+Portanto, enquanto poderíamos tentar provar $(P \implies Q)$ de uma só vez, é suficiente provar que é verdadeira em dois passos menores $(P \implies R)$ e $(R \implies Q)$. Mais genericamente, ao provarmos $(P \implies Q)$, provaremos uma sequência de implicações:
+
+$$
+P \implies P_1 
+$$
+
+$$
+P_1 \implies P_2 \
+$$
+
+$$
+P_2 \implies P_3 \
+$$
+
+$$
+\dots \
+$$
+
+$$
+P_n \implies Q
+$$
+
+onde cada uma dessas implicações intermediárias é mais fácil de provar.
+
+Uma vez feito isso, considere o que acontece se $P$ for verdadeiro ou falso:
+
+> **$P$ é verdadeiro:** Se $P$ é verdadeiro, a primeira implicação nos diz que $P_1$ é verdadeiro (**modus ponens**). Então, como $P_1$ é verdadeiro, a próxima implicação nos diz que $P_2$ é verdadeiro (novamente **modus ponens**). Como $P_2$ é verdadeiro, $P_3$ é verdadeiro, $P_4$ é verdadeiro, e assim por diante, até que possamos concluir que $Q$ é verdadeiro. Como $P$ é verdadeiro e $Q$ é verdadeiro, a implicação $P \implies Q$ é verdadeira.
+
+> **$P$ é falso:** Por outro lado, se $P$ for falso, sabemos, apenas olhando a tabela verdade da implicação, que a implicação $P \implies Q$ é verdadeira.
+
+Note que, quando $P$ é falso, o fato de que $(P \implies Q)$ é verdadeiro é imediato e simplesmente depende da tabela verdade da implicação; não precisamos fazer nenhum trabalho ou raciocínio. Por outro lado, quando $P$ é verdadeiro, precisamos trabalhar para mostrar que $(P \implies Q)$ é verdadeira. Por essa razão, quase todas as nossas provas começarão com a suposição de que $P$ é verdadeiro. Geralmente deixamos o caso "P é falso" implícito, assumindo que nosso leitor conhece as tabelas verdade.

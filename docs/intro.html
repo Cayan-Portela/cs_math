@@ -179,7 +179,18 @@ window.Quarto = {
   <li><a href="#provando-uma-implicação" id="toc-provando-uma-implicação" class="nav-link" data-scroll-target="#provando-uma-implicação"><span class="header-section-number">1.4</span> Provando uma Implicação</a>
   <ul class="collapse">
   <li><a href="#método-1" id="toc-método-1" class="nav-link" data-scroll-target="#método-1"><span class="header-section-number">1.4.1</span> Método #1</a></li>
-  <li><a href="#método-1-1" id="toc-método-1-1" class="nav-link" data-scroll-target="#método-1-1"><span class="header-section-number">1.4.2</span> Método #1</a></li>
+  <li><a href="#método-2" id="toc-método-2" class="nav-link" data-scroll-target="#método-2"><span class="header-section-number">1.4.2</span> Método #2</a></li>
+  </ul></li>
+  <li><a href="#provando-se-somente-se" id="toc-provando-se-somente-se" class="nav-link" data-scroll-target="#provando-se-somente-se"><span class="header-section-number">1.5</span> Provando “se somente se””</a>
+  <ul class="collapse">
+  <li><a href="#método-1-prove-que-cada-declaração-implica-na-outra" id="toc-método-1-prove-que-cada-declaração-implica-na-outra" class="nav-link" data-scroll-target="#método-1-prove-que-cada-declaração-implica-na-outra"><span class="header-section-number">1.5.1</span> Método #1: Prove que Cada Declaração Implica na Outra</a></li>
+  <li><a href="#método-2-construa-uma-cadeia-de-sse" id="toc-método-2-construa-uma-cadeia-de-sse" class="nav-link" data-scroll-target="#método-2-construa-uma-cadeia-de-sse"><span class="header-section-number">1.5.2</span> Método #2: Construa uma Cadeia de SSE</a></li>
+  <li><a href="#exemplo" id="toc-exemplo" class="nav-link" data-scroll-target="#exemplo"><span class="header-section-number">1.5.3</span> Exemplo</a></li>
+  </ul></li>
+  <li><a href="#modus-ponens" id="toc-modus-ponens" class="nav-link" data-scroll-target="#modus-ponens"><span class="header-section-number">1.6</span> Modus ponens</a>
+  <ul class="collapse">
+  <li><a href="#um-erro-lógico-comum." id="toc-um-erro-lógico-comum." class="nav-link" data-scroll-target="#um-erro-lógico-comum."><span class="header-section-number">1.6.1</span> Um erro lógico comum.</a></li>
+  <li><a href="#encadeando-implicações" id="toc-encadeando-implicações" class="nav-link" data-scroll-target="#encadeando-implicações"><span class="header-section-number">1.6.2</span> Encadeando implicações</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -364,9 +375,10 @@ x(2 - x)(2 + x) + 1 &gt; 0
 </ul>
 </div>
 </section>
-<section id="método-1-1" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="método-1-1"><span class="header-section-number">1.4.2</span> Método #1</h3>
-<p>Uma implicação “<span class="math inline">\((P \text{ IMPLICA } Q)\)</span>”) é logicamente equivalente à sua contrapositiva <span class="math inline">\((\text{NÃO}(Q) \text{ IMPLICA } \text{NÃO}(P))\)</span>:<br>
+<section id="método-2" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="método-2"><span class="header-section-number">1.4.2</span> Método #2</h3>
+<div style="text-align: justify">
+<p>Uma implicação “<span class="math inline">\(P \text{ \small{IMPLICA} } Q\)</span>” é logicamente equivalente à sua contrapositiva <span class="math inline">\(\text{\small{NÃO}}(Q) \text{ \small{IMPLICA} } \text{\small{NÃO}}(P)\)</span>:<br>
 Provar uma é tão bom quanto provar a outra, e às vezes provar a contrapositiva é mais fácil do que provar a declaração original. Se for o caso, você pode proceder da seguinte forma:</p>
 <ol type="1">
 <li>Escreva: “Vamos provar a contrapositiva:” e, em seguida, declare a contrapositiva.</li>
@@ -385,8 +397,383 @@ Assuma que <span class="math inline">\(\sqrt{r}\)</span> é racional. Então, ex
 r = \frac{m^2}{n^2}
 \]</span></p>
 <p>Como <span class="math inline">\(m^2\)</span> e <span class="math inline">\(n^2\)</span> são inteiros, <span class="math inline">\(r\)</span> é racional.</p>
+</div>
+</section>
+</section>
+<section id="provando-se-somente-se" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="provando-se-somente-se"><span class="header-section-number">1.5</span> Provando “se somente se””</h2>
+<p>Muitos teoremas matemáticos afirmam que duas declarações são logicamente equivalentes; ou seja, uma é válida se, e somente se, a outra também for. Aqui está um exemplo que é conhecido há milhares de anos: Dois triângulos têm os mesmos comprimentos de lados se, e somente se, dois comprimentos de lados e o ângulo entre esses lados forem os mesmos. A expressão “se, e somente se” aparece com tanta frequência que muitas vezes é abreviada como “sse”.</p>
+<section id="método-1-prove-que-cada-declaração-implica-na-outra" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="método-1-prove-que-cada-declaração-implica-na-outra"><span class="header-section-number">1.5.1</span> Método #1: Prove que Cada Declaração Implica na Outra</h3>
+<p>A declaração “P SSE Q” é equivalente a duas declarações: “P IMPLICA Q” e “Q IMPLICA P”. Então, você pode provar um “sse” provando duas implicações:</p>
+<ol type="1">
+<li>Escreva: “Provamos que P implica Q e vice-versa.”</li>
+<li>Escreva: “Primeiro, mostramos que P implica Q.” Faça isso por um dos métodos da Seção 1.5.</li>
+<li>Escreva: “Agora, mostramos que Q implica P.” Novamente, faça isso por um dos métodos da Seção 1.5.</li>
+</ol>
+</section>
+<section id="método-2-construa-uma-cadeia-de-sse" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="método-2-construa-uma-cadeia-de-sse"><span class="header-section-number">1.5.2</span> Método #2: Construa uma Cadeia de SSE</h3>
+<p>Para provar que P é verdadeiro se, e somente se, Q for verdadeiro:</p>
+<ol type="1">
+<li>Escreva: “Construímos uma cadeia de implicações se, e somente se.”</li>
+<li>Prove que P é equivalente a uma segunda declaração, que é equivalente a uma terceira, e assim por diante, até que você chegue a Q.</li>
+</ol>
+<p>Esse método às vezes requer mais criatividade do que o primeiro, mas o resultado pode ser uma prova curta e elegante.</p>
+</section>
+<section id="exemplo" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="exemplo"><span class="header-section-number">1.5.3</span> Exemplo</h3>
+<p>A <strong>desvio padrão</strong> de uma sequência de valores <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> é definida como:</p>
+<p><span class="math display">\[
+s = \sqrt{\frac{(x_1 - \mu)^2 + (x_2 - \mu)^2 + \dots + (x_n - \mu)^2}{n}}
+\]</span></p>
+<p>onde <span class="math inline">\(\mu\)</span> é a média dos valores:</p>
+<p><span class="math display">\[
+\mu = \frac{x_1 + x_2 + \dots + x_n}{n}
+\]</span></p>
+<p><strong>Teorema 1.6.1.</strong> O desvio padrão de uma sequência de valores <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> é zero se, e somente se, todos os valores forem iguais à média. Por exemplo, o desvio padrão das notas de teste é zero se, e somente se, todos tiverem exatamente a média da turma.</p>
+<p><strong>Prova.</strong> Construímos uma cadeia de implicações “sse”, começando com a declaração de que o desvio padrão é zero:</p>
+<p><span class="math display">\[
+s = \sqrt{\frac{(x_1 - \mu)^2 + (x_2 - \mu)^2 + \dots + (x_n - \mu)^2}{n}} = 0
+\]</span></p>
+</section>
+</section>
+<section id="modus-ponens" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="modus-ponens"><span class="header-section-number">1.6</span> Modus ponens</h2>
+<p>Uma vez que provamos uma implicação</p>
+<p><span class="math display">\[
+P \implies Q
+\]</span></p>
+<p>como sendo sempre verdadeira, queremos usá-la. Logo provaremos que a implicação</p>
+<blockquote class="blockquote">
+<p>Se <span class="math inline">\(n\)</span> é par, então <span class="math inline">\(n^2\)</span> é par.</p>
+</blockquote>
+<p>é sempre verdadeira. Sabemos que não pode ser falsa, então vamos escrever as 3 linhas relevantes de sua tabela verdade e suprimir a linha correspondente à implicação ser falsa:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \implies Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>Note que, se pegarmos um número como <span class="math inline">\(n = 14\)</span>, sabemos que ele é par e, portanto, a hipótese é verdadeira. Pela tabela verdade, sabemos que a conclusão também deve ser verdadeira — o número <span class="math inline">\(n^2 = 14^2\)</span> é par. Não precisamos fazer mais nada; a tabela verdade, e nossa prova, garantem que a conclusão é verdadeira.</p>
+<p>De modo mais geral, se provamos que</p>
+<p><span class="math display">\[
+P \implies Q
+\]</span></p>
+<p>é sempre verdadeiro, então, se sabemos que a hipótese <span class="math inline">\(P\)</span> é verdadeira, a conclusão <span class="math inline">\(Q\)</span> também deve ser verdadeira.</p>
+<div id="def-modusponens" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.2 (Modus ponens)</strong></span> A dedução:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> implica <span class="math inline">\(Q\)</span> é verdadeiro, e</li>
+<li><span class="math inline">\(P\)</span> é verdadeiro</li>
+<li>logo, <span class="math inline">\(Q\)</span> deve ser verdadeiro.</li>
+</ul>
+<p>é chamada de <strong>modus ponens</strong>.</p>
+</div>
+<p>Esta dedução lógica foi formalizada pela primeira vez por Teofrasto.</p>
+<p>Note que, se tivermos provado a implicação <span class="math inline">\(P \implies Q\)</span> como verdadeira, mas a hipótese <span class="math inline">\(P\)</span> for falsa, então <strong>não podemos</strong> concluir nada sobre o valor de verdade da conclusão. Quando a hipótese é falsa, o valor de verdade da conclusão não importa — a implicação ainda é verdadeira. Podemos verificar isso considerando as duas linhas relevantes da tabela verdade da implicação.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \implies Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>De forma similar, se tivermos provado a implicação <span class="math inline">\(P \implies Q\)</span> como verdadeira, e tivermos provado que a conclusão <span class="math inline">\(Q\)</span> é verdadeira, então não podemos concluir nada sobre o valor de verdade da hipótese <span class="math inline">\(P\)</span>. Novamente, isso é facilmente verificado considerando as duas linhas relevantes da tabela verdade da implicação.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \implies Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>No entanto, há uma outra instância na qual podemos fazer uma conclusão válida. Considere novamente a tabela verdade quando a implicação <span class="math inline">\(P \implies Q\)</span> é verdadeira, mas a conclusão <span class="math inline">\(Q\)</span> é falsa:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \implies Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>Aqui, a única possibilidade é que a hipótese deve ser falsa. Isso nos permite fazer outra dedução válida.</p>
+<div id="def-modustollens" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.3 (Modus tollens)</strong></span> A dedução:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> implica <span class="math inline">\(Q\)</span> é verdadeira, e</li>
+<li><span class="math inline">\(Q\)</span> é falso</li>
+<li>logo, <span class="math inline">\(P\)</span> deve ser falso.</li>
+</ul>
+<p>é chamada de <strong>modus tollens</strong>.</p>
+</div>
+<p>Então, quando sabemos (voltando ao nosso exemplo) que:</p>
+<blockquote class="blockquote">
+<p>Se ele é Shakespeare, então ele está morto.</p>
+</blockquote>
+<p>podemos concluir que qualquer pessoa viva não é Shakespeare.</p>
+<section id="afirmar-o-consequente-e-negar-o-antecedente" class="level4" data-number="1.6.0.1">
+<h4 data-number="1.6.0.1" class="anchored" data-anchor-id="afirmar-o-consequente-e-negar-o-antecedente"><span class="header-section-number">1.6.0.1</span> Afirmar o consequente e negar o antecedente</h4>
+<p>A má aplicação do <strong>modus ponens</strong> é uma fonte frequente de erros lógicos. Um erro muito comum é chamado de “afirmar o consequente”.</p>
+</section>
+<div id="wrn-errocomum1">
+<section id="um-erro-lógico-comum." class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="um-erro-lógico-comum."><span class="header-section-number">1.6.1</span> Um erro lógico comum.</h3>
+<p>A falsa dedução:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> implica <span class="math inline">\(Q\)</span> é verdadeiro, e</li>
+<li><span class="math inline">\(Q\)</span> é verdadeiro,</li>
+<li>e, portanto, <span class="math inline">\(P\)</span> deve ser verdadeiro.</li>
+</ul>
+<p>é chamada de <strong>afirmar o consequente</strong>.</p>
+</section>
+</div>
+<blockquote class="blockquote">
+<p>O fluxo de lógica está errado — verifique a tabela verdade. Além disso, a notação de seta para a implicação, <span class="math inline">\(\implies\)</span>, nos ajuda a lembrar que a verdade deve fluir da hipótese para a conclusão, e não o contrário.</p>
+</blockquote>
+<p>Para ver quão errado isso pode ser, considere novamente a verdadeira implicação:</p>
+<ul>
+<li>Se ele é Shakespeare, então ele está morto.</li>
+</ul>
+<p>Se afirmássemos o consequente, então qualquer homem morto deve ser Shakespeare.</p>
+<p>Afirmar o consequente às vezes é usado como uma técnica retórica (especialmente por quem propaga bobagens):</p>
+<blockquote class="blockquote">
+<p>Se eles são Galileu, então são oprimidos. Estou sendo oprimido, logo devo ser Galileu.</p>
+</blockquote>
+<p>ou (quando sentindo pena de si mesmo)</p>
+<blockquote class="blockquote">
+<p>Se eles são grandes artistas, então são incompreendidos. Sou incompreendido, logo devo ser um grande artista.</p>
+</blockquote>
+<p>E a falácia da seção de comentários nas redes sociais:</p>
+<blockquote class="blockquote">
+<p>Se eu digo a verdade, ofendo as pessoas. Estou ofendendo, logo estou dizendo a verdade. Tenha cuidado com a afirmação do consequente — ela aparece com frequência e é sempre falaciosa. Um erro lógico muito semelhante é chamado de “negar o antecedente”.</p>
+</blockquote>
+<div id="wrn-errocomum2">
+<section id="outro-erro-lógico-comum." class="level4" data-number="1.6.1.1">
+<h4 data-number="1.6.1.1" class="anchored" data-anchor-id="outro-erro-lógico-comum."><span class="header-section-number">1.6.1.1</span> Outro erro lógico comum.</h4>
+<p>A falsa dedução:</p>
+<ul>
+<li><span class="math inline">\(P\)</span> implica <span class="math inline">\(Q\)</span> é verdadeiro, e</li>
+<li><span class="math inline">\(P\)</span> é falso,</li>
+<li>e, portanto, <span class="math inline">\(Q\)</span> deve ser falso.</li>
+</ul>
+</section>
+</div>
+<p>é chamada de <strong>negar o antecedente</strong> e é uma má aplicação do <strong>modus tollens</strong>.</p>
+<p>Aqui estão alguns exemplos:</p>
+<blockquote class="blockquote">
+<p>Se eu fui a Toronto, então visitei o Canadá. Eu não fui a Toronto, então não visitei o Canadá.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Se ele é Shakespeare então ele está morto. Abraham Linconl não é Shakespeare, então ele deve estar vivo.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Se tem gosto ruim então deve ser saudável. Isso tem gosto bom, então não deve ser saudável.</p>
+</blockquote>
+<section id="encadeando-implicações" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="encadeando-implicações"><span class="header-section-number">1.6.2</span> Encadeando implicações</h3>
+<p>Quando construímos uma prova de que <span class="math inline">\(P \implies Q\)</span> é verdadeira, não fazemos isso de uma só vez. Em vez disso, dividimos em uma sequência de implicações menores e mais fáceis, que podemos encadear. Para ver como isso funciona, considere o seguinte:</p>
+<section id="resultado" class="level4" data-number="1.6.2.1">
+<h4 data-number="1.6.2.1" class="anchored" data-anchor-id="resultado"><span class="header-section-number">1.6.2.1</span> Resultado</h4>
+<p>Seja <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span> e <span class="math inline">\(R\)</span> declarações. Então, a seguinte afirmação é sempre verdadeira:</p>
+<p><span class="math display">\[
+\Big( (P \implies R) \land (R \implies Q) \Big) \implies (P \implies Q)
+\]</span></p>
+<p>Este resultado é um exemplo de uma tautologia, uma afirmação que é sempre verdadeira. Voltaremos às tautologias mais tarde no texto. Para mostrar que é sempre verdadeira, poderíamos construir a tabela verdade ou usar algum raciocínio. Ambos os métodos são provas, mas não seremos tão formais até o próximo capítulo. A tabela verdade não é difícil de construir, mas um pouco tediosa; como cada uma de <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, <span class="math inline">\(R\)</span> pode ser verdadeira ou falsa, há <span class="math inline">\(2^3 = 8\)</span> linhas a considerar:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \implies R\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R \implies Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P \implies Q\)</span></th>
+<th style="text-align: center;">A afirmação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>A tabela acima é uma maneira perfeitamente razoável de mostrar que a afirmação é sempre verdadeira. No entanto, podemos fazer o mesmo apenas com um pouco de raciocínio; isso também melhora nossa compreensão da afirmação. Apresentaremos o argumento em forma de pontos:</p>
+<ul>
+<li><p>A declaração é uma implicação com a hipótese <span class="math inline">\(((P \implies R) \land (R \implies Q))\)</span> e a conclusão <span class="math inline">\((P \implies Q)\)</span>. Uma implicação é falsa quando a hipótese é verdadeira, mas a conclusão é falsa; caso contrário, a implicação é verdadeira.</p></li>
+<li><p>Como a conclusão, <span class="math inline">\((P \implies Q)\)</span>, é uma implicação, só pode ser falsa quando sua hipótese é verdadeira e sua conclusão é falsa. Portanto, devemos ter que <span class="math inline">\(P\)</span> é verdadeiro, mas <span class="math inline">\(Q\)</span> é falso.</p></li>
+<li><p>Para que a hipótese seja verdadeira, ambas as implicações, <span class="math inline">\((P \implies R)\)</span> e <span class="math inline">\((R \implies Q)\)</span>, devem ser verdadeiras (já que uma conjunção de duas afirmações só é verdadeira quando ambas são verdadeiras).</p>
+<ul>
+<li><p>Como <span class="math inline">\(P\)</span> é verdadeiro e exigimos que <span class="math inline">\((P \implies R)\)</span> seja verdadeiro, <span class="math inline">\(R\)</span> deve ser verdadeiro.</p></li>
+<li><p>Como <span class="math inline">\(Q\)</span> é falso e exigimos que <span class="math inline">\((R \implies Q)\)</span> seja verdadeiro, <span class="math inline">\(R\)</span> deve ser falso.</p></li>
+</ul></li>
+</ul>
+<p>Mas, como <span class="math inline">\(R\)</span> é uma afirmação, ela não pode ser verdadeira e falsa ao mesmo tempo.</p>
+<ul>
+<li>Portanto, não há como fazer a afirmação ser falsa. Como nunca é falsa, ela deve ser sempre verdadeira.</li>
+</ul>
+<p>Então, voltando à declaração <span class="math inline">\(P \implies Q\)</span>. Gostaríamos de mostrar que é sempre verdadeira, mas não podemos fazê-lo de uma só vez. Em vez disso, assumimos que podemos dar dois passos menores e provar que as duas implicações <span class="math inline">\((P \implies R)\)</span> e <span class="math inline">\((R \implies Q)\)</span> são sempre verdadeiras. A conjunção das duas implicações, <span class="math inline">\((P \implies R) \land (R \implies Q)\)</span>, também é verdadeira e é exatamente a hipótese do <strong>Resultado 2.5.5</strong>. Como a implicação no <strong>Resultado 2.5.5</strong> é sempre verdadeira e sua hipótese é verdadeira — <strong>modus ponens</strong> — sua conclusão deve ser verdadeira.</p>
+<p>Portanto, enquanto poderíamos tentar provar <span class="math inline">\((P \implies Q)\)</span> de uma só vez, é suficiente provar que é verdadeira em dois passos menores <span class="math inline">\((P \implies R)\)</span> e <span class="math inline">\((R \implies Q)\)</span>. Mais genericamente, ao provarmos <span class="math inline">\((P \implies Q)\)</span>, provaremos uma sequência de implicações:</p>
+<p><span class="math display">\[
+P \implies P_1
+\]</span></p>
+<p><span class="math display">\[
+P_1 \implies P_2 \
+\]</span></p>
+<p><span class="math display">\[
+P_2 \implies P_3 \
+\]</span></p>
+<p><span class="math display">\[
+\dots \
+\]</span></p>
+<p><span class="math display">\[
+P_n \implies Q
+\]</span></p>
+<p>onde cada uma dessas implicações intermediárias é mais fácil de provar.</p>
+<p>Uma vez feito isso, considere o que acontece se <span class="math inline">\(P\)</span> for verdadeiro ou falso:</p>
+<blockquote class="blockquote">
+<p><strong><span class="math inline">\(P\)</span> é verdadeiro:</strong> Se <span class="math inline">\(P\)</span> é verdadeiro, a primeira implicação nos diz que <span class="math inline">\(P_1\)</span> é verdadeiro (<strong>modus ponens</strong>). Então, como <span class="math inline">\(P_1\)</span> é verdadeiro, a próxima implicação nos diz que <span class="math inline">\(P_2\)</span> é verdadeiro (novamente <strong>modus ponens</strong>). Como <span class="math inline">\(P_2\)</span> é verdadeiro, <span class="math inline">\(P_3\)</span> é verdadeiro, <span class="math inline">\(P_4\)</span> é verdadeiro, e assim por diante, até que possamos concluir que <span class="math inline">\(Q\)</span> é verdadeiro. Como <span class="math inline">\(P\)</span> é verdadeiro e <span class="math inline">\(Q\)</span> é verdadeiro, a implicação <span class="math inline">\(P \implies Q\)</span> é verdadeira.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong><span class="math inline">\(P\)</span> é falso:</strong> Por outro lado, se <span class="math inline">\(P\)</span> for falso, sabemos, apenas olhando a tabela verdade da implicação, que a implicação <span class="math inline">\(P \implies Q\)</span> é verdadeira.</p>
+</blockquote>
+<p>Note que, quando <span class="math inline">\(P\)</span> é falso, o fato de que <span class="math inline">\((P \implies Q)\)</span> é verdadeiro é imediato e simplesmente depende da tabela verdade da implicação; não precisamos fazer nenhum trabalho ou raciocínio. Por outro lado, quando <span class="math inline">\(P\)</span> é verdadeiro, precisamos trabalhar para mostrar que <span class="math inline">\((P \implies Q)\)</span> é verdadeira. Por essa razão, quase todas as nossas provas começarão com a suposição de que <span class="math inline">\(P\)</span> é verdadeiro. Geralmente deixamos o caso “P é falso” implícito, assumindo que nosso leitor conhece as tabelas verdade.</p>
 
 
+</section>
 </section>
 </section>
 
